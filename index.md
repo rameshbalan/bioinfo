@@ -1,7 +1,3 @@
----
-title: "Bioinformatics - BIOL 5340"  
-author: "Balan Ramesh and Jeff Demuth"
----
 
 ### Course Information:
 
