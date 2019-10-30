@@ -7,7 +7,7 @@ This course provides an introduction to bioinformatics and computational genomic
 
 ### Background Information:
 
-<video width="1280" height="720" src="data/Transcriptomics.mp4" controls>Sorry, your browser doesn't support HTML5 <code>video</code>, but you candownload this video from the
+<video width="1080" height="720" src="data/Transcriptomics.mp4" controls>Sorry, your browser doesn't support HTML5 <code>video</code>, but you candownload this video from the
 <a href="data/Transcriptomics.mp4">Internet Archive</a>.
 </video>
 
