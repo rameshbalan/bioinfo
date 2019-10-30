@@ -25,7 +25,7 @@ This course provides an introduction to bioinformatics and computational genomic
 |5. | P5,Q5,R5,S5|[Group5](group5)|[Link](group5/guide)|
 |6. | P6,Q6,R6,S6|[Group6](group6)|[Link](group6/guide)|
 
-This project depends on the following softwares/programs to carry out a specific task. Installation instructions are given below.
+Your project depends on some of the following softwares/programs to carry out a specific task. Installation instructions are given below.
 
 ### Dependencies:
 
