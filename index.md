@@ -32,3 +32,38 @@ This course provides an introduction to bioinformatics and computational genomic
 |4. | P4,Q4,R4,S4|[Group4](group4)|[Link](https://www.google.com)|
 |5. | P5,Q5,R5,S5|[Group5](group5)|[Link](https://www.google.com)|
 |6. | P6,Q6,R6,S6|[Group6](group6)|[Link](https://www.google.com)|
+
+This project depends on the following softwares/programs to carry out a specific task. Installation instructions are given below.
+
+### Dependencies:
+
+- [Conda](https://docs.conda.io/en/latest/miniconda.html)
+	- Choose 64-bit Linux Installers for Python 3.7
+	- Please ensure that miniconda installs in your home directory. If not, you can not install conda.
+	- Please ensure that conda is added to bashrc or bash_profile.
+- [BUSCO](https://busco.ezlab.org)
+	- Install busco using conda as follows.
+		- `conda create -n busco -c bioconda busco`
+	- This installs BUSCO but unfortunately, the configuration file isn't setup. You can do this in three steps.
+		- cd to miniconda3/envs/busco/config/ directory.
+		- `wget https://gitlab.com/ezlab/busco/raw/master/config/config.ini.default`.
+		- `mv config.ini.default config.ini`.
+
+- [cd-hit](http://weizhongli-lab.org/cd-hit/)
+	- Install cd-hit as follows.
+	```
+	wget https://github.com/weizhongli/cdhit/releases/download/V4.8.1/cd-hit-v4.8.1-2019-0228.tar.gz
+	tar xvf cd-hit-v4.8.1-2019-0228.tar.gz --gunzip
+	cd cd-hit-v4.8.1-2019-0228
+	make
+	cd cd-hit-auxtools
+	make
+	```
+	- Add cd-hit-v4.8.1-2019-0228 to the path variable.
+- [salmon](https://combine-lab.github.io/salmon/)
+	- Install salmon using conda as follows.
+		- `conda create -n salmon -c bioconda salmon`
+	- To use salmon
+		- `conda activate salmon`
+- [python3](https://www.python.org)
+	- This should be available via conda and also as a module in Stampede2.
