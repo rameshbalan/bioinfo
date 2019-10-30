@@ -29,7 +29,7 @@
 	```
 	d. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 3:__ Cluster identical sequences together.  
-	a. Cluster all the amino acid sequences which are 100% identical within the predicted peptide file. Use `cd-hit` with `-c 0.99` flag.  
+	a. Cluster all the amino acid sequences which are 99% identical within the predicted peptide file. Use `cd-hit` with `-c 0.99` flag.  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 4:__ Filter transcripts with low expression.  
 	a. Quantify the expression for each gene. Use `salmon`  
