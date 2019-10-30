@@ -1,4 +1,3 @@
-
 ### Course Information:
 This course provides an introduction to bioinformatics and computational genomics. The course is geared toward the student with a biology background and limited programming experience. Coursework will be completed almost exclusively in the UNIX/Linux computing environment and students will learn to program using Python. Students will learn: how to reframe biological problems into computationally tractable questions, basic computational biology algorithms, analyses of genome and transcriptome data.
 
