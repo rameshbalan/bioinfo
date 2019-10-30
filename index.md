@@ -13,13 +13,13 @@ This course provides an introduction to bioinformatics and computational genomic
 2. Step 2: Cluster similar sequences together.  
 	a. Run BUSCO to check the quality of the assembly.   
 3. Step 3: Get the unigenes.  
-	a. Step 3a: Quantify the expression for each gene.  
-	b. Step 3b: Retain only the highest expressed Isoform for each gene.  
+	a. Quantify the expression for each gene.  
+	b. Retain only the highest expressed Isoform for each gene.  
 	c. Run BUSCO to check the quality of the assembly.  
 4. Step 4: Find Orthologs among 5 species.  
-	a. Step 4a: Run all vs all BLAST among 5 species.  
-	b. Step 4b: Pick the reciprocal Best BLAST hit (RBBH).  
-	c. Step 4c: Run a 5 way script to pull out the orthologs among 5 species.  
+	a. Run all vs all BLAST among 5 species.  
+	b. Pick the reciprocal Best BLAST hit (RBBH).  
+	c. Run a 5 way script to pull out the orthologs among 5 species.  
 
 ### Instructions:
 
