@@ -2,7 +2,7 @@
 
 > Nothing lasts forever, not even your problems. Stay Positive !
 
-### Problem Objective:
+### Project Objective:
 
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
@@ -12,7 +12,7 @@
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.  
 - Step 2: Filter the low expression transcripts.  
 	a. Quantify the expression for each gene. Use `salmon`  
-	b. Retain transcripts with a minimum of 5 TPM. Write a `python` script.  
+	b. Retain transcripts with a minimum of _5 TPM_. Write a `python` script.  
 	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - Step 3: Identify the coding regions.  
 	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs`.  
@@ -23,8 +23,9 @@
 	wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_protein.faa.gz
 	# Uncompress the file.
 	gzip -d GCF_000002335.3_Tcas5.2_protein.faa.gz
-	# Example blastp. Make sure to create blastdb before this command.
-	blastp -query transdecoder_dir/longest_orfs.pep -db uniprot_sprot.fasta  -max_target_seqs 1 -outfmt 6 -evalue 1e-5 -num_threads 48 > blastp.outfmt6
+	# Make sure to create blastdb before this command.
+	# Example blastp.
+	blastp -query transdecoder_dir/longest_orfs.pep -db Tcas_protein_db.fasta  -max_target_seqs 1 -outfmt 6 -evalue 1e-5 -num_threads 48 > blastp.outfmt6
 	```
 	c. Using the homology information from BLASTP, predict the coding sequence.
 	```bash
@@ -39,8 +40,34 @@
 
 ### Helpful Hints:
 
-- To use BUSCO.  
+- To use BUSCO, the first step is to get the lineage and then busco can be run as follows.
+
 	```bash
+	# Get the lineage
+	wget https://busco.ezlab.org/datasets/endopterygota_odb9.tar.gz
+	# Uncompress the directory.
+	tar xvf endopterygota_odb9.tar.gz --gunzip
+	# Activate busco environment
 	conda activate busco
-	
+	# Run BUSCO
+	run_busco --in transcriptome.fasta --out [output_directory_name] -l [path_to_]endopterygota_odb9 -m tran -c 48
 	```
+	- [BUSCO manual](http://gitlab.com/ezlab/busco/raw/master/BUSCO_v3_userguide.pdf)
+- To use salmon, activate the conda environment and salmon can be run as follows.
+	```bash
+	# Activate salmon environment.
+	conda activate salmon
+	# Create an index for the transcriptome.
+	salmon index -t transcriptome.fasta -i transcriptome_index
+	# Quantify the expression.
+	salmon quant -i transcriptome_index -l IU --seqBias --gcBias -1 Sample1_R1.fastq.gz -2 Sample1_R2.fastq.gz -p 48 --validateMappings -o Sample1
+	```
+	- [Salmon manual](https://salmon.readthedocs.io/en/latest/)
+- TransDecoder has two programs. These two programs can be run as follows.
+	```bash
+	# To run LongOrfs
+	TransDecoder.LongOrfs -t target_transcripts.fasta
+	# To run Predict
+	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
+	```
+	- [TransDecoder manual](https://github.com/TransDecoder/TransDecoder/wiki)
