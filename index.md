@@ -47,8 +47,8 @@ This project depends on the following softwares/programs to carry out a specific
 
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
 	- Choose 64-bit Linux Installers for Python 3.7
-		-
-		```
+
+		```bash
 		# Get the installer.
 		wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 		# Run the installer.
@@ -66,7 +66,7 @@ This project depends on the following softwares/programs to carry out a specific
 
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
 	- Install cd-hit as follows.
-	```
+	```bash
 	# Get the installer.
 	wget https://github.com/weizhongli/cdhit/releases/download/V4.8.1/cd-hit-v4.8.1-2019-0228.tar.gz
 	# Uncompress the package.
@@ -84,5 +84,14 @@ This project depends on the following softwares/programs to carry out a specific
 		- `conda create -n salmon -c bioconda salmon`
 	- To use salmon
 		- `conda activate salmon`
+- [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki)
+	- Install TransDecoder as follows.
+	```bash
+	# Get the package.
+	wget https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.5.0.tar.gz
+	# Uncompress the package.
+	tar xvf TransDecoder-v5.5.0.tar.gz --gunzip
+	```
+	- Add TransDecoder to the path variable in bashrc or bash_profile.
 - [python3](https://www.python.org)
 	- This should be available via conda and also as a module in Stampede2.
