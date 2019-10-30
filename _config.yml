@@ -1,4 +1,4 @@
-theme: minima
+theme: jekyll-theme-slate
 title: Bioinformatics - BIOL 5340
 description: Balan Ramesh and Jeff Demuth
 header_pages:
