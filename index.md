@@ -1,7 +1,7 @@
 ### Course Information:
 This course provides an introduction to bioinformatics and computational genomics. The course is geared toward the student with a biology background and limited programming experience. Coursework will be completed almost exclusively in the UNIX/Linux computing environment and students will learn to program using Python. Students will learn: how to reframe biological problems into computationally tractable questions, basic computational biology algorithms, analyses of genome and transcriptome data.
 
-### Problem Statement:
+### Problem Objective:
 
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
@@ -12,22 +12,6 @@ This course provides an introduction to bioinformatics and computational genomic
   <source src="data/Transcriptomics.MP4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-### Project Workflow:
-1. Step 1: ~~Construct a _de novo_ transcriptome assembly.~~  
-	a. Run BUSCO to check the quality of the assembly.  
-	- Why _de novo_ assembly?
-		- Low Mapping against the closest reference species.  
-2. Step 2: Cluster similar sequences together.  
-	a. Run BUSCO to check the quality of the assembly.   
-3. Step 3: Get the unigenes.  
-	a. Quantify the expression for each gene.  
-	b. Retain only the highest expressed Isoform for each gene.  
-	c. Run BUSCO to check the quality of the assembly.  
-4. Step 4: Find Orthologs among 5 species.  
-	a. Run all vs all BLAST among 5 species.  
-	b. Pick the reciprocal Best BLAST hit (RBBH).  
-	c. Run a 5 way script to pull out the orthologs among 5 species.  
 
 ### Instructions:
 
@@ -95,3 +79,7 @@ This project depends on the following softwares/programs to carry out a specific
 	- Add TransDecoder to the path variable in bashrc or bash_profile.
 - [python3](https://www.python.org)
 	- This should be available via conda and also as a module in Stampede2.
+	- Try `python3` in the terminal. If you get an error, try `module load python3`.
+- [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
+	- This should be available as a module in Stampede2.
+	- Try `module load blast`.
