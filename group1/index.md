@@ -10,7 +10,7 @@
 - __Step 1:__ Construct a _de novo_ transcriptome assembly.  
 	~~a. Run Trinity to construct a primary assembly.~~  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.  
-- __Step 2:__ Filter the low expression transcripts.  
+- __Step 2:__ Filter transcripts with low expression.  
 	a. Quantify the expression for each gene. Use `salmon`  
 	b. Retain transcripts with a minimum of _5 TPM_. Write a `python` script.  
 	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
@@ -71,8 +71,8 @@
 	- [Salmon manual](https://salmon.readthedocs.io/en/latest/)
 - TransDecoder has two programs. These two programs can be run as follows.
 	```bash
-	# To run LongOrfs
-	TransDecoder.LongOrfs -t target_transcripts.fasta
+	# To run LongOrfs with minimum ORF length as 100 amino acids.
+	TransDecoder.LongOrfs -t target_transcripts.fasta -m 100
 	# To run Predict
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
