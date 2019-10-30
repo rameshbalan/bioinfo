@@ -3,8 +3,8 @@
 |Step |Program|Flags/Filter/Parameters| Notes|
 |-----|:-----:|:------------:|--------:|
 |1.b |BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
-|2.a|cd-hit-est|-c 0.95| This clusters identical transcript sequences together in the transcriptome file and creates a non-redundant sequence file which are 95% similar|
-|2.b|cd-hit-est|-c 0.90| This clusters identical transcript sequences together in the transcriptome file and creates a non-redundant sequence file which are 90% similar|
+|2.a|cd-hit-est|-c 0.95| This clusters 95% similar transcript sequences together in the transcriptome file and creates a non-redundant sequence file|
+|2.b|cd-hit-est|-c 0.90| This clusters 90% similar transcript sequences together in the transcriptome file and creates a non-redundant sequence file|
 |2.c|BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
 |3.a|TransDecoder.LongOrfs| > 100bp |This creates 4 files. A `cds` file, a `pep` file, a `gff` file and a `bed` file.|
 |3.b|BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
