@@ -5,7 +5,7 @@ This course provides an introduction to bioinformatics and computational genomic
 
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
-### List of things to do:
+### Project Workflow:
 1. Step 1: ~~Construct a _de novo_ transcriptome assembly.~~  
 	a. Run BUSCO to check the quality of the assembly.  
 	- Why _de novo_ assembly?
