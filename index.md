@@ -6,19 +6,20 @@ This course provides an introduction to bioinformatics and computational genomic
 Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
 ### List of things to do:
-- Construct a _de novo_ transcriptome assembly.
+- Step 1: ~~Construct a _de novo_ transcriptome assembly.~~
 	- Why _de novo_ assembly?
 		- Low Mapping against the closest reference species.
-- Run BUSCO to check the quality of the assembly.
-- Cluster similar sequences together.
-- Run BUSCO to check the quality of the assembly.
-- Quantify the expression for each gene.
-- Retain only the highest expressed Isoform for each gene.
-- Run BUSCO to check the quality of the assembly.
-- Find Orthologs among 5 species.
-	- Run all vs all BLAST among 5 species.
-	- Pick the reciprocal Best BLAST hit (RBBH).
-	- Run a 5 way script to pull out the orthologs among 5 species.
+	- Run BUSCO to check the quality of the assembly.
+- Step 2: Cluster similar sequences together.
+	- Run BUSCO to check the quality of the assembly.
+- Step 3: Get the unigenes.
+	- Step 3a: Quantify the expression for each gene.
+	- Step 3b: Retain only the highest expressed Isoform for each gene.
+	- Run BUSCO to check the quality of the assembly.
+- Step 4: Find Orthologs among 5 species.
+	- Step 4a: Run all vs all BLAST among 5 species.
+	- Step 4b: Pick the reciprocal Best BLAST hit (RBBH).
+	- Step 4c: Run a 5 way script to pull out the orthologs among 5 species.
 
 ### Instructions:
 
