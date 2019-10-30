@@ -1,6 +1,3 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-hacker
 title: Bioinformatics - BIOL 5340
 description: Balan Ramesh and Jeff Demuth
-header_pages:
-  - group1.md
-  - group2.md
