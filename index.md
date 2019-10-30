@@ -5,6 +5,12 @@ This course provides an introduction to bioinformatics and computational genomic
 
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
+### Background Information:
+
+<video width="1280" height="720" src="data/Transcriptomics.mp4" controls>Sorry, your browser doesn't support HTML5 <code>video</code>, but you candownload this video from the
+<a href="data/Transcriptomics.mp4">Internet Archive</a>.
+</video>
+
 ### Project Workflow:
 1. Step 1: ~~Construct a _de novo_ transcriptome assembly.~~  
 	a. Run BUSCO to check the quality of the assembly.  
