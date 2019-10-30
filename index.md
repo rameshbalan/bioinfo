@@ -39,7 +39,14 @@ This project depends on the following softwares/programs to carry out a specific
 
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
 	- Choose 64-bit Linux Installers for Python 3.7
-	- Please ensure that miniconda installs in your home directory. If not, you can not install conda.
+		-
+		```
+		# Get the installer.
+		wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+		# Run the installer.
+		bash Miniconda3-latest-Linux-x86_64.sh
+		```
+	- Please ensure that miniconda installs in your home directory. If not, you will get a permission denied error.
 	- Please ensure that conda is added to bashrc or bash_profile.
 - [BUSCO](https://busco.ezlab.org)
 	- Install busco using conda as follows.
@@ -52,10 +59,14 @@ This project depends on the following softwares/programs to carry out a specific
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
 	- Install cd-hit as follows.
 	```
+	# Get the installer.
 	wget https://github.com/weizhongli/cdhit/releases/download/V4.8.1/cd-hit-v4.8.1-2019-0228.tar.gz
+	# Uncompress the package.
 	tar xvf cd-hit-v4.8.1-2019-0228.tar.gz --gunzip
+	# Navigate to the directory and build the programs.
 	cd cd-hit-v4.8.1-2019-0228
 	make
+	# Navigate to the auxiliary directory and build the programs.
 	cd cd-hit-auxtools
 	make
 	```
