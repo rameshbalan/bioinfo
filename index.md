@@ -3,7 +3,7 @@ This course provides an introduction to bioinformatics and computational genomic
 
 ### Problem Statement:
 
-Find the orthologs among the 5 species of beetles and annotate the orthologs.
+> Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
 ### List of things to do:
 1. Step 1: ~~Construct a _de novo_ transcriptome assembly.~~
