@@ -7,16 +7,15 @@
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
 ### Project Workflow:
-- Step 1: Construct a _de novo_ transcriptome assembly.  
+- __Step 1:__ Construct a _de novo_ transcriptome assembly.  
 	~~a. Run Trinity to construct a primary assembly.~~  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.  
-- Step 2: Filter the low expression transcripts.  
+- __Step 2:__ Filter the low expression transcripts.  
 	a. Quantify the expression for each gene. Use `salmon`  
 	b. Retain transcripts with a minimum of _5 TPM_. Write a `python` script.  
 	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
-- Step 3: Identify the coding regions.  
-	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs`.  
-
+- __Step 3:__ Identify the coding regions.  
+	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs`  
 	b. Using the predicted peptide sequences (`.pep` file) run BLASTP against _Tribolium castaneum_ protein sequences. Use `makeblastdb` and `blastp`.
 	```bash
 	# Get the sequence file.
@@ -30,13 +29,20 @@
 	c. Using the homology information from BLASTP, predict the coding sequence.
 	```bash
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
-
 	```
 	d. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
--  Step 4: Find Orthologs among 5 species.  
+-  __Step 4:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`  
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  
 	c. Run a 5 way script to pull out the orthologs among 5 species. Write a `python` script.
+- __Step 5:__ Add annotation to the orthologs.
+	a. Using T_cas ids and T_cas reference gff files, add chromosome id (for example: LGX, LG2 etc.),chromosome name (Autosome/ Sex chromosome). Write `python` script.
+	```bash
+	# Get the gff file.
+	wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_genomic.gff.gz
+	# Uncompress the file.
+	gzip -d GCF_000002335.3_Tcas5.2_genomic.gff.gz
+	```
 
 ### Helpful Hints:
 
