@@ -20,7 +20,7 @@
 	# Uncompress the file.
 	gzip -d GCF_000002335.3_Tcas5.2_protein.faa.gz
 	# Make sure to create blastdb before this command.
-	# Example tblastx.
+	# Example blastp.
 	blastp -query transdecoder_dir/longest_orfs.pep -db Tcas_protein_db.fasta  -max_target_seqs 1 -outfmt 6 -evalue 1e-5 -num_threads 48 > blastp.outfmt6
 	```
 	c. Using the homology information from BLASTP, predict the coding sequence.
@@ -42,7 +42,7 @@
 	# Uncompress the file.
 	gzip -d GCF_000002335.3_Tcas5.2_rna.fna.gz
 	# Make sure to create blastdb before this command.
-	# Example blastp.
+	# Example tblastx.
 	tblastx -query highest_isoform_only.fasta -db Tcas_transcript_db.fasta  -max_target_seqs 1 -outfmt 6 -num_threads 48 > highest_isoform_only_species1_Tcas_db.txt
 	```
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  
