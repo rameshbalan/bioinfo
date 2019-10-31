@@ -28,6 +28,20 @@ This course provides an introduction to bioinformatics and computational genomic
 Your project depends on some of the following softwares/programs to carry out a specific task. Installation instructions are given below.
 
 ### Dependencies:
+- Sequence Reads
+	- It is a good practice to have all your reads in one directory.
+	- You can copy the sequence reads to your working directory using `cp` command or globus file transfer.
+	- The sequence reads are available in the following path.
+	```bash
+	[Add Stampede2 Path]
+	```
+- Trinity Assembly
+	- It is a good practice to have all your Trinity assemblies in one directory.
+	- You can copy the assembly files to your working directory using `cp` command or globus file transfer.
+	- The sequence reads are available in the following path.
+	```bash
+	[Add Stampede2 Path]
+	```
 
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
 	- Choose 64-bit Linux Installers for Python 3.7
