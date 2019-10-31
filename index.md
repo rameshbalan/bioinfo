@@ -58,7 +58,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 	- Install busco using conda as follows.
 		- `conda create -n busco -c bioconda busco`
 	- This installs BUSCO but unfortunately, the configuration file isn't setup. You can do this in three steps.
-		- cd to miniconda3/envs/busco/config/ directory.
+		- `cd` to `miniconda3/envs/busco/config/` directory.
 		- `wget https://gitlab.com/ezlab/busco/raw/master/config/config.ini.default`.
 		- `mv config.ini.default config.ini`.
 
