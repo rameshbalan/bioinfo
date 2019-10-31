@@ -38,7 +38,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 - Trinity Assembly
 	- It is a good practice to have all your Trinity assemblies in one directory.
 	- You can copy the assembly files to your working directory using `cp` command or globus file transfer.
-	- The sequence reads are available in the following path.
+	- The assemblies are available in the following path.
 	```bash
 	[Add Stampede2 Path]
 	```
