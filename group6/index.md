@@ -15,7 +15,7 @@
 	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
 	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 3:__ Cluster identical sequences together.  
-	a. Cluster all the amino acid sequences which are 95% identical within the predicted peptide file. Use `cd-hit-est` with `-c 0.95` flag.  
+	a. Cluster all the sequences which are 95% identical within the transcriptome file. Use `cd-hit-est` with `-c 0.95` flag.  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 4:__ Identify the coding regions.  
 	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 200 aa length for each ORF. Use `TransDecoder.LongOrfs`  
