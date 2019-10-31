@@ -36,14 +36,14 @@
 	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
 	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 5:__ Find the Orthologs among 5 species.  
-	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `tblastx`. Use _Tribolium castaneum_ transcript sequences.
+	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`. Use _Tribolium castaneum_ transcript sequences.
 	```bash
 	wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_rna.fna.gz
 	# Uncompress the file.
 	gzip -d GCF_000002335.3_Tcas5.2_rna.fna.gz
 	# Make sure to create blastdb before this command.
-	# Example tblastx.
-	tblastx -query highest_isoform_only.fasta -db Tcas_transcript_db.fasta  -max_target_seqs 1 -outfmt 6 -num_threads 48 > highest_isoform_only_species1_Tcas_db.txt
+	# Example blastp.
+	blastp -query highest_isoform_only.fasta -db Tcas_protein_db.fasta  -max_target_seqs 1 -outfmt 6 -num_threads 48 > highest_isoform_only_species1_Tcas_db.txt
 	```
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  
 	c. Run a 5 way script to pull out the orthologs among 5 species. Write a `python` script.  
