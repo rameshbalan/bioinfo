@@ -1,1 +1,1 @@
-### Bioinfomatics Course Repository for Group Projects
+### Bioinformatics Course Repository for Group Projects
