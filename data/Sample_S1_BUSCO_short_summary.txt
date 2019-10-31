@@ -1,0 +1,15 @@
+# BUSCO version is: 3.0.1 
+# The lineage dataset is: endopterygota_odb9 (Creation date: 2016-02-13, number of species: 35, number of BUSCOs: 2442)
+# To reproduce this run: python /home/balan/miniconda3/envs/py36/bin/run_BUSCO.py -i Sample_S1.fasta.transdecoder.cds -o Sample_S1_transdecoder -l /home/hdd/4/rna_all_beetles/Transdecorder/endopterygota_odb9/ -m transcriptome -c 24
+#
+# Summarized benchmarking in BUSCO notation for file Sample_S1.fasta.transdecoder.cds
+# BUSCO was run in mode: transcriptome
+
+	C:92.6%[S:43.5%,D:49.1%],F:3.3%,M:4.1%,n:2442
+
+	2262	Complete BUSCOs (C)
+	1062	Complete and single-copy BUSCOs (S)
+	1200	Complete and duplicated BUSCOs (D)
+	81	Fragmented BUSCOs (F)
+	99	Missing BUSCOs (M)
+	2442	Total BUSCO groups searched
