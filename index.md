@@ -33,14 +33,14 @@ Your project depends on some of the following softwares/programs to carry out a 
 	- You can copy the sequence reads to your working directory using `cp` command or globus file transfer.
 	- The sequence reads are available in the following path.
 	```bash
-	[Add Stampede2 Path]
+	/work/01248/jpdemuth/stampede2/5340_share/reads
 	```
 - Trinity Assembly
 	- It is a good practice to have all your Trinity assemblies in one directory.
 	- You can copy the assembly files to your working directory using `cp` command or globus file transfer.
 	- The assemblies are available in the following path.
 	```bash
-	[Add Stampede2 Path]
+	/work/01248/jpdemuth/stampede2/5340_share/trinity_assembly
 	```
 
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
