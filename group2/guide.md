@@ -1,4 +1,6 @@
-## Quick Guide for the workflow.
+---
+title: Quick Guide for the workflow.
+---
 
 ### Group 2
 
