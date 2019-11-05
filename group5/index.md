@@ -1,8 +1,6 @@
 ---
-title: Guidelines for the Project
+title: Group 5
 ---
-
-## Group 5
 
 > If you think you are too small to make a difference, try sleeping with a mosquito.
 

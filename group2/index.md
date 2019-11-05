@@ -1,8 +1,6 @@
 ---
-title: Guidelines for the Project
+title: Group 2
 ---
-
-## Group 2
 
 > A diamond is merely a lump of coal that did well under pressure.
 

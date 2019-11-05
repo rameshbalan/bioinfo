@@ -1,8 +1,6 @@
 ---
-title: Guidelines for the Project
+title: Group 2
 ---
-
-## Group 1
 
 > Nothing lasts forever, not even your problems. Stay Positive !
 

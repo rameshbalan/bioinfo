@@ -1,8 +1,6 @@
 ---
-title: Guidelines for the Project
+title: Group 6
 ---
-
-## Group 6
 
 > Coming together is beginning; keeping together is progress; working together is success.
 
