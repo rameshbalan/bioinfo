@@ -1,4 +1,6 @@
-## Example files
+---
+title: Sample Files
+---
 
 This page has the sample output files from the following programs. You may choose to use these sample files to work on your `python` script for downstream processing while you wait for your actual results.
 
