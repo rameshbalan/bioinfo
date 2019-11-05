@@ -2,7 +2,7 @@
 title: Group 5
 ---
 
-> If you think you are too small to make a difference, try sleeping with a mosquito.
+> In life only one thing is certain, Friday will come.
 
 ### Project Objective:
 
