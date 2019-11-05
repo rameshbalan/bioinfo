@@ -1,3 +1,7 @@
+---
+title: Guidelines for the Project
+---
+
 ## Group 3
 
 > The elevator to success is out of order. You' ll have to use the stairs...one step at a time.

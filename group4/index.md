@@ -1,3 +1,7 @@
+---
+title: Guidelines for the Project
+---
+
 ## Group 4
 
 > Even if you are on the right track, you’ll get run over if you just sit there.
