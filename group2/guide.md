@@ -1,5 +1,6 @@
 ## Quick Guide for the workflow.
 
+### Group 2
 
 |Step |Program|Flags/Filter/Parameters| Notes|
 |-----|:-----:|:------------:|--------:|

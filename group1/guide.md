@@ -1,5 +1,7 @@
 ## Quick Guide for the workflow.
 
+### Group 1
+
 |Step |Program|Flags/Filter/Parameters| Notes|
 |-----|:-----:|:------------:|--------:|
 |1.b |BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
