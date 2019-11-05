@@ -77,3 +77,7 @@
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
 	- [TransDecoder manual](https://github.com/TransDecoder/TransDecoder/wiki)
+
+### Reference:
+
+_De novo_ transcriptome assembly, functional annotation and differential gene expression analysis of juvenile and adult _E. fetida_, a model oligochaete used in ecotoxicological studies - [PDF](../data/Thunders_et_al_2017.pdf)

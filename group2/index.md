@@ -48,7 +48,7 @@
 	run_busco --in transcriptome.fasta --out [output_directory_name] -l [path_to_]endopterygota_odb9 -m tran -c 48
 	```
 	- [BUSCO manual](http://gitlab.com/ezlab/busco/raw/master/BUSCO_v3_userguide.pdf)
-	
+
 - TransDecoder has two programs. These two programs can be run as follows.
 	```bash
 	# To run LongOrfs with minimum ORF length as 100 amino acids.
@@ -63,3 +63,6 @@
 	cd-hit -i cds_file -o nr100_cds_file -c 1.00
 	```
 	- [cd-hit manual](https://github.com/weizhongli/cdhit/wiki/3.-User's-Guide#CDHIT)
+
+### Reference:
+_De novo_ transcriptome assembly, annotation and comparison of four ecological and evolutionary model salmonid fish species. - [PDF](../data/Carruthers_et_al_2018.pdf)

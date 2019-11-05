@@ -93,3 +93,7 @@
 	cd-hit -i cds_file -o nr99_cds_file -c 0.99
 	```
 	- [cd-hit manual](https://github.com/weizhongli/cdhit/wiki/3.-User's-Guide#CDHIT)
+
+### Reference:
+_De novo_ transcriptome assembly and its annotation for the black ant
+_Formica fusca_ at the larval stage - [PDF](../data/Morandin_et_al_2018.pdf)

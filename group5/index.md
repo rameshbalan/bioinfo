@@ -73,3 +73,7 @@
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
 	- [TransDecoder manual](https://github.com/TransDecoder/TransDecoder/wiki)
+
+### Reference:
+
+High Quality _de Novo_ Transcriptome Assembly of _Croton tiglium_. - [PDF](../data/Haak_et_al_2018.pdf)

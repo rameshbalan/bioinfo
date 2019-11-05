@@ -86,3 +86,7 @@
 	cd-hit-est -i cds_file -o nr95_cds_file -c 0.95
 	```
 	- [cd-hit manual](https://github.com/weizhongli/cdhit/wiki/3.-User's-Guide#CDHITEST)
+
+### Reference:
+
+_De Novo_ transcriptome Assembly and Functional Annotation in Five species of Bats. - [PDF](../data/Santillan_et_al_2018.pdf)

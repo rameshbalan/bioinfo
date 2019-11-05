@@ -59,3 +59,6 @@
 	cd-hit-est -i transcriptome.fasta -o transcriptome_nr95 -c 0.95
 	```
 	- [cd-hit-est manual](https://github.com/weizhongli/cdhit/wiki/3.-User's-Guide#CDHITEST)
+
+### Reference:
+_De novo_ sequencing and characterization of _Picrorhiza kurrooa_ transcriptome at two temperatures showed major transcriptome adjustments. - [PDF](../data/Gahlan_et_al_2012.pdf)
