@@ -55,12 +55,23 @@ Your project depends on some of the following softwares/programs to carry out a 
 	- Please ensure that miniconda installs in your home directory. If not, you will get a permission denied error.
 	- Please ensure that conda is added to bashrc or bash_profile.
 - [BUSCO](https://busco.ezlab.org)
+	- BUSCO depends on `blast` and `hmmer` program.  
+		- To install `hmmer` program we can use the following command.  
+			- `conda create hmmer -c biocore hmmer`
+		- Fortunately, Stampede2 has `blast` module, so we don't have to install them.
 	- Install busco using conda as follows.
 		- `conda create -n busco -c bioconda busco`
-	- This installs BUSCO but unfortunately, the configuration file isn't setup. You can do this in three steps.
+	- This installs BUSCO but unfortunately, the configuration file isn't setup. To setup the configuration file with the right path to hmmer,
 		- `cd` to `miniconda3/envs/busco/config/` directory.
-		- `wget https://gitlab.com/ezlab/busco/raw/master/config/config.ini.default`.
-		- `mv config.ini.default config.ini`.
+		- `wget https://rameshbalan.github.io/bioinfo/data/config.ini`.
+		- Get the hmmer path. Navigate to `miniconda3/envs/hmmer/bin` and copy the path after using `pwd` command.
+		- Open the `config.ini` file and add the path to `hmmer` program.
+			```bash
+			# To open the file
+			nano config.ini
+			# Scroll down all the way to the bottom and line 72 expects the path to the hmmsearch.
+			Change the path from [path to hmmer] to the actual path.
+			```
 
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
 	- Install cd-hit as follows.
