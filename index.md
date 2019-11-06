@@ -61,7 +61,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 - [BUSCO](https://busco.ezlab.org)
 	- BUSCO depends on `blast` and `hmmer` program.  
 		- To install `hmmer` program we can use the following command.  
-			- `conda create hmmer -c biocore hmmer`
+			- `conda create -n hmmer -c biocore hmmer`
 		- Fortunately, Stampede2 has `blast` module, so we don't have to install them.
 	- Install busco using conda as follows.
 		- `conda create -n busco -c bioconda busco`
