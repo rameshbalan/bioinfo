@@ -173,7 +173,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 		conda activate salmon
 		```
 	2. What do I do if I get a `bad_alloc()` error?
-		- This will happen if you are in group 1 or group 6.
+		- This will happen if you are in group 1 or group 5.
 		- If this happens, please run `salmon` in [galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2).
 			- Data is available in `[mention the location/name]`.
 			- Please ask for assistance.
