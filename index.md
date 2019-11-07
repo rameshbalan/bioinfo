@@ -60,14 +60,8 @@ Your project depends on some of the following softwares/programs to carry out a 
 		bash Miniconda3-latest-Linux-x86_64.sh
 		```
 		- _Note_: Type "yes" to the following warning during installation.
-		```
-		WARNING:
-		You currently have a PYTHONPATH environment variable set. This may cause
-		unexpected behavior when running the Python interpreter in Miniconda3.
-		For best results, please verify that your PYTHONPATH only points to
-		directories of packages that are compatible with the Python interpreter
-		in Miniconda3:
-		```
+		>WARNING:You currently have a PYTHONPATH environment variable set. This may cause unexpected behavior when running the Python interpreter in Miniconda3. For best results, please verify that your PYTHONPATH only points to directories of packages that are compatible with the Python interpreter in Miniconda3: /home1/01248/[username]/miniconda3  
+
 		- _Note_: Type "yes" to initialize Miniconda3.
 	3. How to check if `conda` is active?
 		- If `conda` is active you will see `(base)` at the beginning of the shell prompt as shown below.
