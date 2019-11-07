@@ -2,7 +2,7 @@
 title: Quick Guide for the workflow.
 ---
 
-### Group 6
+### Group 5
 
 |Step |Program|Flags/Filter/Parameters| Notes|
 |-----|:-----:|:------------:|--------:|

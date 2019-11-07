@@ -1,5 +1,5 @@
 ---
-title: Group 6
+title: Group 5
 ---
 
 > Coming together is beginning; keeping together is progress; working together is success.
