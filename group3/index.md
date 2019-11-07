@@ -15,10 +15,10 @@ title: Group 3
 - __Step 2:__ Cluster identical sequences together.  
 	a. Cluster all the transcript sequences which are 95% similar to each other file. Use `cd-hit-est` with `-c 0.95` flag.  
 	b. Using the clustered cds file from the previous step, now cluster the transcript sequences which are 90% similar. Use `cd-hit-est` with `-c 0.90` flag.  
-	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Identify the coding regions.  
 	a. Using the transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs` with `-m 100` flag.  
-	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	b. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 -  __Step 4:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`  
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  

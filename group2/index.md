@@ -18,10 +18,10 @@ title: Group 2
 	```bash
 	TransDecoder.Predict -t target_transcripts.cds --single_best_orf
 	```
-	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Cluster identical sequences together.  
 	a. Cluster all the amino acid sequences which are 100% identical within the predicted peptide file. Use `cd-hit` with `-c 1.0` flag.  
-	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	b. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 -  __Step 4:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`  
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  

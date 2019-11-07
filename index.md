@@ -163,8 +163,8 @@ Your project depends on some of the following softwares/programs to carry out a 
 		cd-hit -h
 		```
 		- This will print the usage and various options available in `cd-hit` as shown below.
-		![](data/cd-hit_active.png)
-
+		![](data/cd-hit_active.png)  
+		- If you get an error, please ask for assistance.
 - [salmon](https://combine-lab.github.io/salmon/)
 	- Install salmon using conda as follows.
 		- `conda create -n salmon -c bioconda salmon`

@@ -29,7 +29,7 @@ title: Group 5
 	```bash
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
-	d. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	d. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`.  
 	```bash

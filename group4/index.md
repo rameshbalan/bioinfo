@@ -29,14 +29,14 @@ title: Group 4
 	```bash
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
-	d. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	d. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Cluster identical sequences together.  
 	a. Cluster all the amino acid sequences which are 99% identical within the predicted peptide file. Use `cd-hit` with `-c 0.99` flag.  
-	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	b. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 4:__ Filter transcripts with low expression.  
 	a. Quantify the expression for each gene. Use `salmon`  
 	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
-	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 5:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`. Use _Tribolium castaneum_ transcript sequences.
 	```bash
