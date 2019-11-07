@@ -47,8 +47,11 @@ Your project depends on some of the following softwares/programs to carry out a 
 	/work/01248/jpdemuth/stampede2/5340_share/trinity_assembly
 	```
 
-- [Conda](https://docs.conda.io/en/latest/miniconda.html)
-	- Choose 64-bit Linux Installers for Python 3.7
+- [Conda](https://docs.conda.io/en/latest/miniconda.html)  
+	1. What is `conda`?
+		- Conda is an open source package and environment manager for python and other languages. It helps installing packages and its dependencies easier. It is also useful in downgrading or upgrading to different versions of the same package.  
+	2. How to get and install `conda`?
+		- Choose 64-bit Linux Installers for Python 3.7
 
 		```bash
 		# Get the installer.
@@ -56,29 +59,60 @@ Your project depends on some of the following softwares/programs to carry out a 
 		# Run the installer.
 		bash Miniconda3-latest-Linux-x86_64.sh
 		```
-	- Please ensure that miniconda installs in your home directory. If not, you will get a permission denied error.
-	- Please ensure that conda is added to bashrc or bash_profile.
+		- _Note_: Type "yes" to the following warning during installation.
+		```
+		WARNING:
+		You currently have a PYTHONPATH environment variable set. This may cause
+		unexpected behavior when running the Python interpreter in Miniconda3.
+		For best results, please verify that your PYTHONPATH only points to
+		directories of packages that are compatible with the Python interpreter
+		in Miniconda3:
+		```
+		- _Note_: Type "yes" to initialize Miniconda3.
+	3. How to check if `conda` is active?
+		- If `conda` is active you will see `(base)` at the beginning of the shell prompt as shown below.
+		![](data/conda_active.png)
+		- If conda is not active you can activate by sourcing the `.bashrc` file from your home directory as follows.
+			```bash
+			# Activate conda by source
+			source ~/.bashrc
+			```
+
 - [BUSCO](https://busco.ezlab.org)
-	- BUSCO depends on `blast` and `hmmer` program.  
-		- To install `hmmer` program we can use the following command.  
-			- `conda create -n hmmer -c biocore hmmer`
-		- Fortunately, Stampede2 has `blast` module, so we don't have to install them.
-	- Install busco using conda as follows.
-		- `conda create -n busco -c bioconda busco`
-	- This installs BUSCO but unfortunately, the configuration file isn't setup. To setup the configuration file with the right path to hmmer,
-		- `cd` to `miniconda3/envs/busco/config/` directory.
-		- `wget https://rameshbalan.github.io/bioinfo/data/config.ini`.
-		- Get the hmmer path. Navigate to `miniconda3/envs/hmmer/bin` and copy the path after using `pwd` command.
-		- Open the `config.ini` file and add the path to `hmmer` program.
+	1. What is `busco`?
+		- BUSCO stands for **B**enchmarking **U**niversal **S**ingle-**C**opy **Orthologs**. BUSCO is primarily used to analyze the completeness of a genome, a transcriptome or a gene set by using highly conserved orthologs for a given lineage.
+	2. How to get and install `busco`?
+		- Install busco using conda as follows.
+			- `conda create -n busco -c bioconda busco`
+			- Type `yes` or `y` to install all dependencies.
+		- This installs BUSCO but unfortunately, the configuration file isn't setup. To setup the configuration file with the right path to hmmer,
+			- `cd` to `miniconda3/envs/busco/config/` directory.
+			- `wget https://rameshbalan.github.io/bioinfo/data/config.ini`.
+			- Get the hmmer path. Navigate to `miniconda3/envs/busco/bin` and copy the path after using `pwd` command.
+			- Open the `config.ini` file and add the path to `hmmer` program.
 			```bash
 			# To open the file
 			nano config.ini
 			# Scroll down all the way to the bottom and line 72 expects the path to the hmmsearch.
 			Change the path from [path to hmmer] to the actual path.
 			```
-
+	3. How to check if `busco` is installed properly?
+		```bash
+		# Get the lineage
+		wget https://busco.ezlab.org/datasets/endopterygota_odb9.tar.gz
+		# Uncompress the directory.
+		tar xvf endopterygota_odb9.tar.gz --gunzip
+		# Activate busco environment
+		conda activate busco
+		# Run BUSCO
+		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
+		```
+		- If you get an error, please ask for assistance.
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
-	- Install cd-hit as follows.
+	1. What is `cd-hit`?
+		- `cd-hit` (`cd-hit-est`) is a clustering program for protein (nucleotide) sequences to reduce sequence redundancy.
+	2. How to get and install `cd-hit`?
+		- Navigate to your home directory using `cd ~` and install as follows.  
 	```bash
 	# Get the installer.
 	wget https://github.com/weizhongli/cdhit/releases/download/V4.8.1/cd-hit-v4.8.1-2019-0228.tar.gz
@@ -87,11 +121,24 @@ Your project depends on some of the following softwares/programs to carry out a 
 	# Navigate to the directory and build the programs.
 	cd cd-hit-v4.8.1-2019-0228
 	make
-	# Navigate to the auxiliary directory and build the programs.
-	cd cd-hit-auxtools
-	make
 	```
-	- Add cd-hit-v4.8.1-2019-0228 to the path variable.
+	3. How to add `cd-hit` to the path variable?  
+		```bash
+		# Open .bashrc file
+		nano ~/.bashrc
+		# Add the path
+		export PATH=$PATH:~/cd-hit-v4.8.1-2019-0228
+		```
+	4. How to check if `cd-hit` is installed properly?
+		```bash
+		# Source the .bashrc
+		source ~/.bashrc
+		# Try
+		cd-hit -h
+		```
+		- This will print the usage and various options available in `cd-hit` as shown below.
+		![](data/cd-hit_active.png)
+
 - [salmon](https://combine-lab.github.io/salmon/)
 	- Install salmon using conda as follows.
 		- `conda create -n salmon -c bioconda salmon`
