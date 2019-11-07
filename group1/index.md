@@ -15,7 +15,7 @@ title: Group 1
 - __Step 2:__ Filter transcripts with low expression.  
 	a. Quantify the expression for each gene. Use `salmon`  
 	b. Retain transcripts with a minimum of _5 TPM_. Write a `python` script.  
-	c. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Identify the coding regions.  
 	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs`  
 	b. Using the predicted peptide sequences (`.pep` file) run BLASTP against _Tribolium castaneum_ protein sequences. Use `makeblastdb` and `blastp`.
