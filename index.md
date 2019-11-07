@@ -85,17 +85,10 @@ Your project depends on some of the following softwares/programs to carry out a 
 		- Install busco using conda as follows.
 			- `conda create -n busco -c bioconda busco`
 			- Type `yes` or `y` to install all dependencies.
-		- This installs BUSCO but unfortunately, the configuration file isn't setup. To setup the configuration file with the right path to hmmer,
+		- This installs BUSCO but unfortunately, the configuration file isn't setup. To setup the configuration file,
 			- `cd` to `miniconda3/envs/busco/config/` directory.
 			- `wget https://rameshbalan.github.io/bioinfo/data/config.ini`.
-			- Get the hmmer path. Navigate to `miniconda3/envs/busco/bin` and copy the path after using `pwd` command.
-			- Open the `config.ini` file and add the path to `hmmer` program.
-			```bash
-			# To open the file
-			nano config.ini
-			# Scroll down all the way to the bottom and line 72 expects the path to the hmmsearch.
-			Change the path from [path to hmmer] to the actual path.
-			```
+
 	3. How to check if `busco` is installed properly?
 		```bash
 		# Get the lineage
@@ -108,6 +101,37 @@ Your project depends on some of the following softwares/programs to carry out a 
 		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
 		```
 		- If you get an error, please ask for assistance.
+	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample sbatch script
+		```bash
+		#!/bin/bash
+		#----------------------------------------------------
+		# Sample Slurm job script
+		# for TACC Stampede2 SKX nodes
+		#
+		# Example SBATCH File for BUSCO.
+		# NOTE: Change the email id under --mail-user flag.
+		#----------------------------------------------------
+
+		#SBATCH -J step1b_busco           # Job name
+		#SBATCH -o step1b_busco.o%j       # Name of stdout output file
+		#SBATCH -e step1b_busco.e%j       # Name of stderr error file
+		#SBATCH -p skx-normal      # Queue (partition) name
+		#SBATCH -N 1               # Total # of nodes (must be 1 for serial)
+		#SBATCH -n 1               # Total # of mpi tasks (should be 1 for serial)
+		#SBATCH -t 00:30:00        # Run time (hh:mm:ss)
+		#SBATCH --mail-user=firstname.lastname@mavs.uta.edu
+		#SBATCH --mail-type=all    # Send email at begin and end of job
+		#------------------------------------------------------
+
+		# Sourcing bashrc to activate conda
+		source ~/.bashrc
+		# Activating busco environment
+		conda activate busco
+		# Running busco
+		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
+		```
+		> Note: `busco` takes more than 12 hours to complete on a knl node. However, it takes less than 30 minutes on a skylake node. The above `sbatch` script is for a skylake node.
+
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
 	1. What is `cd-hit`?
 		- `cd-hit` (`cd-hit-est`) is a clustering program for protein (nucleotide) sequences to reduce sequence redundancy.
