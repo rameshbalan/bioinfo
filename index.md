@@ -74,7 +74,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 
 - [BUSCO](https://busco.ezlab.org)
 	1. What is `busco`?
-		- BUSCO stands for **B**enchmarking **U**niversal **S**ingle-**C**opy **O**rthologs. BUSCO is primarily used to analyze the completeness of a genome, a transcriptome or a gene set by using highly conserved orthologs for a given lineage.
+		- BUSCO stands for **B**enchmarking **U**niversal **S**ingle-**C**opy **O**rthologs**. BUSCO is primarily used to analyze the completeness of a genome, a transcriptome or a gene set by using highly conserved orthologs for a given lineage.
 	2. How to get and install `busco`?
 		- Install busco using conda as follows.
 			- `conda create -n busco -c bioconda busco`
@@ -165,17 +165,38 @@ Your project depends on some of the following softwares/programs to carry out a 
 	- To use salmon
 		- `conda activate salmon`
 - [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki)
-	- Install TransDecoder as follows.
+	1. What is `TransDecoder`?
+		- Coding regions within the transcript sequences can be identified by using `TransDecoder`. It has two major steps. The first step identifies the Open Reading Frames (ORFs) and then it predicts the likely coding regions.
+	2. How to get and install `TransDecoder`?
 	```bash
+	# Navigate to the home directory
+	cd ~
 	# Get the package.
 	wget https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.5.0.tar.gz
 	# Uncompress the package.
 	tar xvf TransDecoder-v5.5.0.tar.gz --gunzip
 	```
-	- Add TransDecoder to the path variable in bashrc or bash_profile.
+	3. Add TransDecoder to the path variable in bashrc.
+		```bash
+		# Open .bashrc file
+		nano ~/.bashrc
+		# Add the path
+		export PATH=$PATH:~/TransDecoder-TransDecoder-v5.5.0
+		```
+	4. How to check if TransDecoder is installed properly?
+		```bash
+		# Source the .bashrc
+		source ~/.bashrc
+		# Try
+		TransDecoder.LongOrfs -h
+		```
+		- This will print the usage and various options available in `TransDecoder.LongOrfs` as shown below.
+		![](data/TransDecoder_active.png)  
+		- `TransDecoder.Predict` is in the same directory as `TransDecoder.LongOrfs` and you can test it by using `TransDecoder.Predict -h`
+		- If you get an error, please ask for assistance.
 - [python3](https://www.python.org)
 	- This should be available via conda and also as a module in Stampede2.
 	- Try `python3` in the terminal. If you get an error, try `module load python3`.
 - [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
-	- This should be available as a module in Stampede2.
-	- Try `module load blast`.
+	- This should be available as a module in Stampede2 and also in `busco` environment.
+	- Try `module load blast` or `conda activate busco` followed by `blastp`.
