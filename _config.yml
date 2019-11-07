@@ -1,6 +1,8 @@
 theme: minima
 title: Bioinformatics @UT Arlington
-description: Balan Ramesh and Jeff Demuth
+author: Balan Ramesh and Jeff Demuth
+description: >
+    Bioinformatics - BIOL 5340. 
 header_pages:
   - group1/index.md
   - group2/index.md
