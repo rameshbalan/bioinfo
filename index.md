@@ -67,7 +67,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 		![](data/conda_active.png)
 		- If conda is not active you can activate by sourcing the `.bashrc` file from your home directory as follows.
 			```bash
-			# Activate conda by source
+			# Activate conda by using source
 			source ~/.bashrc
 			```
 
