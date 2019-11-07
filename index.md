@@ -160,10 +160,25 @@ Your project depends on some of the following softwares/programs to carry out a 
 		![](data/cd-hit_active.png)  
 		- If you get an error, please ask for assistance.
 - [salmon](https://combine-lab.github.io/salmon/)
-	- Install salmon using conda as follows.
-		- `conda create -n salmon -c bioconda salmon`
-	- To use salmon
-		- `conda activate salmon`
+	1. What is `salmon`?
+		- `salmon` is an alignment free mapping tool to quantify the expression of transcripts. It is extremely fast and has several useful in-built flags such as `--gcBias` and `--seqBias` which models the bias in the sample and corrects for it.
+		- Install salmon using conda as follows.
+			- `conda create -n salmon -c bioconda salmon`
+		- To use salmon in `idev` mode
+			- `conda activate salmon`
+		- To use salmon in `sbatch` script, please source the `.bashrc` file and activate salmon.
+		```bash
+		# Source bashrc
+		source ~/.bashrc
+		# Activate salmon
+		conda activate salmon
+		```
+	2. What do I do if I get a `bad_alloc()` error?
+		- This will happen if you are in group 1 or group 6.
+		- If this happens, please run `salmon` in [galaxy](https://usegalaxy.org).
+			- Data is available in `[mention the location/name]`.
+			- Please ask for assitance.
+
 - [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki)
 	1. What is `TransDecoder`?
 		- Coding regions within the transcript sequences can be identified by using `TransDecoder`. It has two major steps. The first step identifies the Open Reading Frames (ORFs) and then it predicts the likely coding regions.
