@@ -74,7 +74,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 
 - [BUSCO](https://busco.ezlab.org)
 	1. What is `busco`?
-		- BUSCO stands for **B**enchmarking **U**niversal **S**ingle-**C**opy **O**rthologs**. BUSCO is primarily used to analyze the completeness of a genome, a transcriptome or a gene set by using highly conserved orthologs for a given lineage.
+		- BUSCO stands for **B**enchmarking **U**niversal **S**ingle-**C**opy **O**rthologs. BUSCO is primarily used to analyze the completeness of a genome, a transcriptome or a gene set by using highly conserved orthologs for a given lineage.
 	2. How to get and install `busco`?
 		- Install busco using conda as follows.
 			- `conda create -n busco -c bioconda busco`
