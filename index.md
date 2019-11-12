@@ -22,11 +22,11 @@ This course provides an introduction to bioinformatics and computational genomic
 
 |Group|Members|Instructions| Quick Guide|
 |-----|:-----:|:------------:|--------:|
-|1. | P1,Q1,R1,S1|[Group1](group1)|[Link](group1/guide)|
-|2. | P2,Q2,R2,S2|[Group2](group2)|[Link](group2/guide)|
-|3. | P3,Q3,R3,S3|[Group3](group3)|[Link](group3/guide)|
-|4. | P5,Q5,R5,S5|[Group4](group5)|[Link](group5/guide)|
-|5. | P6,Q6,R6,S6|[Group5](group6)|[Link](group6/guide)|
+|1. | Josh,Nistoj,Madison,Kelsey,Juan|[Group1](group1)|[Link](group1/guide)|
+|2. | Augusto,Angela,Dave,Na,Catherine|[Group2](group2)|[Link](group2/guide)|
+|3. | Meghan,Nowrosh,Katlin,Kyle,Kenny|[Group3](group3)|[Link](group3/guide)|
+|4. | Eric,Joydeep,Hasan,Cristian,Janki|[Group4](group5)|[Link](group5/guide)|
+|5. | Christian,Meaghan,Krishna,Mahrshi,Shalini|[Group5](group6)|[Link](group6/guide)|
 
 Your project depends on some of the following softwares/programs to carry out a specific task. Installation instructions are given below.
 
