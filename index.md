@@ -84,46 +84,46 @@ Your project depends on some of the following softwares/programs to carry out a 
 
 	3. How to check if `busco` is installed properly?
 		```bash
-		# cd to home directory
-		cd ~
-		# Get the lineage
-		wget https://busco.ezlab.org/datasets/endopterygota_odb9.tar.gz
-		# Uncompress the directory.
-		tar xvf endopterygota_odb9.tar.gz --gunzip
-		# Activate busco environment
-		conda activate busco
-		# Run BUSCO
-		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
+	# cd to home directory
+	cd ~
+	# Get the lineage
+	wget https://busco.ezlab.org/datasets/endopterygota_odb9.tar.gz
+	# Uncompress the directory.
+	tar xvf endopterygota_odb9.tar.gz --gunzip
+	# Activate busco environment
+	conda activate busco
+	# Run BUSCO
+	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
 		```
 		- If you get an error, please ask for assistance.
 	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample sbatch script
 		```bash
-		#!/bin/bash
-		#----------------------------------------------------
-		# Sample Slurm job script
-		# for TACC Stampede2 SKX nodes
-		#
-		# Example SBATCH File for BUSCO.
-		# NOTE: Change the email id under --mail-user flag.
-		#----------------------------------------------------
+	#!/bin/bash
+	#----------------------------------------------------
+	# Sample Slurm job script
+	# for TACC Stampede2 SKX nodes
+	#
+	# Example SBATCH File for BUSCO.
+	# NOTE: Change the email id under --mail-user flag.
+	#----------------------------------------------------
 
-		#SBATCH -J step1b_busco           # Job name
-		#SBATCH -o step1b_busco.o%j       # Name of stdout output file
-		#SBATCH -e step1b_busco.e%j       # Name of stderr error file
-		#SBATCH -p skx-normal      # Queue (partition) name
-		#SBATCH -N 1               # Total # of nodes (must be 1 for serial)
-		#SBATCH -n 1               # Total # of mpi tasks (should be 1 for serial)
-		#SBATCH -t 00:30:00        # Run time (hh:mm:ss)
-		#SBATCH --mail-user=firstname.lastname@mavs.uta.edu
-		#SBATCH --mail-type=all    # Send email at begin and end of job
-		#------------------------------------------------------
+	#SBATCH -J step1b_busco           # Job name
+	#SBATCH -o step1b_busco.o%j       # Name of stdout output file
+	#SBATCH -e step1b_busco.e%j       # Name of stderr error file
+	#SBATCH -p skx-normal      # Queue (partition) name
+	#SBATCH -N 1               # Total # of nodes (must be 1 for serial)
+	#SBATCH -n 1               # Total # of mpi tasks (should be 1 for serial)
+	#SBATCH -t 00:30:00        # Run time (hh:mm:ss)
+	#SBATCH --mail-user=firstname.lastname@mavs.uta.edu
+	#SBATCH --mail-type=all    # Send email at begin and end of job
+	#------------------------------------------------------
 
-		# Sourcing bashrc to activate conda
-		source ~/.bashrc
-		# Activating busco environment
-		conda activate busco
-		# Running busco
-		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
+	# Sourcing bashrc to activate conda
+	source ~/.bashrc
+	# Activating busco environment
+	conda activate busco
+	# Running busco
+	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
 		```
 		> Note: `busco` takes more than 12 hours to complete on a knl node. However, it takes less than 30 minutes on a skylake node. The above `sbatch` script is for a skylake node.
 
@@ -143,17 +143,17 @@ Your project depends on some of the following softwares/programs to carry out a 
 	```
 	3. How to add `cd-hit` to the path variable?  
 		```bash
-		# Open .bashrc file
-		nano ~/.bashrc
-		# Add the path
-		export PATH=$PATH:~/cd-hit-v4.8.1-2019-0228
+	# Open .bashrc file
+	nano ~/.bashrc
+	# Add the path
+	export PATH=$PATH:~/cd-hit-v4.8.1-2019-0228
 		```
 	4. How to check if `cd-hit` is installed properly?
 		```bash
-		# Source the .bashrc
-		source ~/.bashrc
-		# Try
-		cd-hit -h
+	# Source the .bashrc
+	source ~/.bashrc
+	# Try
+	cd-hit -h
 		```
 		- This will print the usage and various options available in `cd-hit` as shown below.
 		![](data/cd-hit_active.png)  
@@ -192,17 +192,17 @@ Your project depends on some of the following softwares/programs to carry out a 
 	```
 	3. Add TransDecoder to the path variable in bashrc.
 		```bash
-		# Open .bashrc file
-		nano ~/.bashrc
-		# Add the path
-		export PATH=$PATH:~/TransDecoder-TransDecoder-v5.5.0
+	# Open .bashrc file
+	nano ~/.bashrc
+	# Add the path
+	export PATH=$PATH:~/TransDecoder-TransDecoder-v5.5.0
 		```
 	4. How to check if TransDecoder is installed properly?
 		```bash
-		# Source the .bashrc
-		source ~/.bashrc
-		# Try
-		TransDecoder.LongOrfs -h
+	# Source the .bashrc
+	source ~/.bashrc
+	# Try
+	TransDecoder.LongOrfs -h
 		```
 		- This will print the usage and various options available in `TransDecoder.LongOrfs` as shown below.
 		![](data/TransDecoder_active.png)  
