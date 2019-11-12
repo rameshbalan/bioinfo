@@ -119,12 +119,12 @@ Your project depends on some of the following softwares/programs to carry out a 
 	#SBATCH --mail-type=all    # Send email at begin and end of job
 	#------------------------------------------------------
 
-	# Sourcing bashrc to activate conda
-	source ~/.bashrc
-	# Activating busco environment
-	conda activate busco
-	# Running busco
-	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
+		# Sourcing bashrc to activate conda
+		source ~/.bashrc
+		# Activating busco environment
+		conda activate busco
+		# Running busco
+		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
 		```
 		> Note: `busco` takes more than 12 hours to complete on a knl node. However, it takes less than 30 minutes on a skylake node. The above `sbatch` script is for a skylake node.
 
