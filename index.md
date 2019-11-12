@@ -96,36 +96,8 @@ Your project depends on some of the following softwares/programs to carry out a 
 	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
 		```
 		- If you get an error, please ask for assistance.
-	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample sbatch script.  
+	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample [sbatch script](data/sample_busco_sbatch.sh).  
 
-		```bash
-	#!/bin/bash
-	#----------------------------------------------------
-	# Sample Slurm job script
-	# for TACC Stampede2 SKX nodes
-	#
-	# Example SBATCH File for BUSCO.
-	# NOTE: Change the email id under --mail-user flag.
-	#----------------------------------------------------
-
-	#SBATCH -J step1b_busco           # Job name
-	#SBATCH -o step1b_busco.o%j       # Name of stdout output file
-	#SBATCH -e step1b_busco.e%j       # Name of stderr error file
-	#SBATCH -p skx-normal      # Queue (partition) name
-	#SBATCH -N 1               # Total # of nodes (must be 1 for serial)
-	#SBATCH -n 1               # Total # of mpi tasks (should be 1 for serial)
-	#SBATCH -t 00:30:00        # Run time (hh:mm:ss)
-	#SBATCH --mail-user=firstname.lastname@mavs.uta.edu
-	#SBATCH --mail-type=all    # Send email at begin and end of job
-	#------------------------------------------------------
-
-		# Sourcing bashrc to activate conda
-		source ~/.bashrc
-		# Activating busco environment
-		conda activate busco
-		# Running busco
-		run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
-		```
 		> Note: `busco` takes more than 12 hours to complete on a knl node. However, it takes less than 30 minutes on a skylake node. The above `sbatch` script is for a skylake node.
 
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
