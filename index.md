@@ -96,8 +96,8 @@ Your project depends on some of the following softwares/programs to carry out a 
 	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
 		```
 		- If you get an error, please ask for assistance.
-	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample sbatch script  
-		```bash
+	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample sbatch script.  
+	```bash
 	#!/bin/bash
 	#----------------------------------------------------
 	# Sample Slurm job script
@@ -124,7 +124,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 	conda activate busco
 	# Running busco
 	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran -c 272
-		```
+	```
 		> Note: `busco` takes more than 12 hours to complete on a knl node. However, it takes less than 30 minutes on a skylake node. The above `sbatch` script is for a skylake node.
 
 - [cd-hit](http://weizhongli-lab.org/cd-hit/)
