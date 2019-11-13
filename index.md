@@ -146,11 +146,37 @@ Your project depends on some of the following softwares/programs to carry out a 
 		# Activate salmon
 		conda activate salmon
 		```
-	2. What do I do if I get a `bad_alloc()` error?
+	2. What do I do if I get a `bad_alloc()` error?  
 		- This will happen if you are in group 1 or group 5.
-		- If this happens, please run `salmon` in [galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2).
-			- Data is available in `[mention the location/name]`.
-			- Please ask for assistance.
+		- We think this error has to do with the memory allocation on Stampede2 when salmon is called. One of the workaround, is to use `trinity` by calling `salmon` in a script. The instructions are as follows.
+			- Install `trinity`  
+			```bash
+			# Navigate to home directory
+			cd ~
+			# Getting Trinity
+			wget https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.8.6/trinityrnaseq-v2.8.6.FULL.tar.gz
+			# Uncompressing Trinity
+			tar xvf trinityrnaseq-v2.8.6.FULL.tar.gz
+			# Installing trinity
+			cd trinityrnaseq-v2.8.6
+			make
+			make plugins
+			```
+			- Dependencies.
+			```bash
+			module load intel/17.0.4
+			module load samtools
+			conda activate salmon
+			```
+			- We can either add `trinityrnaseq-v2.8.6/util` to the `$PATH` or we could type the path to the script.
+			- Using `align_and_estimate_abundance.pl` script in `trinityrnaseq-v2.8.6/util` directory, we can estimate expression as follows.
+			```bash
+			# Estimating Expression
+align_and_estimate_abundance.pl --transcripts T_frem.fasta --seqType fq --left reads/T_frem_M1_R1.fastq.gz --right reads/T_frem_M1_R2.fastq.gz --est_method salmon --output_dir T_frem_M1 --prep_reference
+			```
+		- Here is a sample sbatch script to run salmon. - [Link](data/sample_salmon_sbatch.sh)  
+			- Please change the email id and other parameters for the `align_and_estimate_abundance.pl` to reflect the sample that you want to quantify in the example sbatch script.
+		- Feel free to ask for assistance.
 
 - [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki)
 	1. What is `TransDecoder`?
