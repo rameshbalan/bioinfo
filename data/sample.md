@@ -17,4 +17,11 @@ Some of the results are compressed to accomodate 50Mb file size limit of github.
 ```bash
 # To unzip the file.
 unzip [name of the file]
-```
+```  
+
+**Sample sbatch Files**  
+
+|S.No|Program|Sample sbatch file (SkyLake Node Stampede2)|
+|:----|:-----:|----------:|
+|1.|BUSCO|[sbatch_busco](sample_busco_sbatch.sh)|
+|1.|Salmon - Trinity Workaround|[sbatch_salmon](sample_salmon_sbatch.sh)|
