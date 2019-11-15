@@ -53,6 +53,8 @@ Your project depends on some of the following softwares/programs to carry out a 
 		- Choose 64-bit Linux Installers for Python 3.7
 
 		```bash
+		# Navigate to home directory
+		cd ~
 		# Get the installer.
 		wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 		# Run the installer.
