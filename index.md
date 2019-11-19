@@ -95,7 +95,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 	# Activate busco environment
 	conda activate busco
 	# Run BUSCO
-	run_busco --in transcriptome.fasta --out transcriptome -l endopterygota_odb9 -m tran
+	run_busco --in [name_of_]trinity_assembly.fasta --out [output_directory_name] -l [path_to_]endopterygota_odb9 -m tran
 		```
 		- If you get an error, please ask for assistance.
 	4. To run `busco` from an `sbatch` script it is necessary to source the `.bashrc` file and to activate busco environment. Here is a sample [sbatch script](data/sample_busco_sbatch.sh).  
