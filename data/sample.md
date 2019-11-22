@@ -10,7 +10,7 @@ This page has the sample output files from the following programs. You may choos
 |2.|cd-hit| [cd-hit fasta file](Sample_S1_cd_hit.zip)|
 |3.|cd-hit-est|[cd-hit-est fasta file](Sample_S1_cd_hit_est.zip)|
 |4.|salmon| [salmon quant file](Sample_S1_salmon.sf)|
-|5.|TransDecoder|[Transdecoder all files](Sample_S1_transdecoder.zip).This has `cds` file, `pep` file, `gff` file and `bed` file.|
+|5.|TransDecoder|[Transdecoder all files](Sample_S1_transdecoder.zip).This has a `cds` file, a `pep` file, a `gff` file and a `bed` file.|
 
 Some of the results are compressed to accomodate 50Mb file size limit of github. You can uncompress them in the terminal using the following command.
 
