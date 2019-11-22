@@ -14,9 +14,9 @@ title: Group 2
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.  
 - __Step 2:__ Identify the coding regions.  
 	a. Using the transcriptome from the previous step, run LongOrfs with threshold set to at least 200 aa length for each ORF. Use `TransDecoder.LongOrfs` with `-m 200` flag.  
-	b. Using the `cds` file, predict the protein sequences for single best ORF for gene. Use `TransDecoder.Predict` with `--single_best_orf` flag.  
+	b. Using the `cds` file, predict the protein sequences for single best ORF for gene. Use `TransDecoder.Predict` with `--single_best_only` flag.  
 	```bash
-	TransDecoder.Predict -t target_transcripts.cds --single_best_orf
+	TransDecoder.Predict -t target_transcripts.cds --single_best_only
 	```
 	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3:__ Cluster identical sequences together.  
@@ -56,7 +56,7 @@ title: Group 2
 	# To run LongOrfs with minimum ORF length as 100 amino acids.
 	TransDecoder.LongOrfs -t target_transcripts.fasta -m 100
 	# To run Predict
-	TransDecoder.Predict -t target_transcripts.fasta --single_best_orf
+	TransDecoder.Predict -t target_transcripts.fasta --single_best_only
 	```
 	- [TransDecoder manual](https://github.com/TransDecoder/TransDecoder/wiki)
 

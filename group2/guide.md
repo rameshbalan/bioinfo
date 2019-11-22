@@ -8,7 +8,7 @@ title: Quick Guide for the workflow.
 |-----|:-----:|:------------:|--------:|
 |1.b |BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
 |2.a|TransDecoder.LongOrfs| > 200bp |This creates 4 files. A `cds` file, a `pep` file, a `gff` file and a `bed` file.|
-|2.b|TransDecoder.Predict| --single_best_orf |This creates 4 files. A `cds` file, a `pep` file, a `gff` file and a `bed` file.|
+|2.b|TransDecoder.Predict| --single_best_only |This creates 4 files. A `cds` file, a `pep` file, a `gff` file and a `bed` file.|
 |2.c |BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
 |3.a|cd-hit|-c 1.0| This clusters identical amino acid sequeces together in the peptide file and creates a non-redundant peptide sequence file.|
 |3.b|BUSCO||This creates short_summary.txt. >>> Tip: Run generate_plot to create a graph of the summary. <<<|
