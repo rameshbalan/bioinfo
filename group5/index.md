@@ -11,30 +11,28 @@ title: Group 5
 ### Project Workflow:
 __Step 1:__ Construct a _de novo_ transcriptome assembly.  
 	~~a. Run Trinity to construct a primary assembly.~~  
-	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
+	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`  
 __Step 2:__ Filter transcripts with low expression.  
-	a. Quantify the expression for each gene. Use `salmon` in galaxy.
+	a. Quantify the expression for each gene. Use `salmon` in galaxy.  
+* You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
+* This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
+* Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
+- Here are answers to some of the questions about the input data in salmon.  
+	- Is this library mate-paired? = Paired-end  
+	- Relative orientation of reads within a pair  = Mates are oriented towards each other(I = inward)  
+	- Specify the strandedness of the reads
+	Not stranded (U) = Not Stranded (U)  
+	![](../data/salmon_galaxy.png)  
+	- Please choose `Yes` for gcBias and sequence-specific Bias when you run salmon.  
+	![](../data/gcBias.png)  
 
-		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
-		- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
-		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
-			- Here are answers to some of the questions about the input data in salmon.
-				- Is this library mate-paired?  
-					- Paired-end  
-				- Relative orientation of reads within a pair  
-					- Mates are oriented towards each other(I = inward)  
-				- Specify the strandedness of the reads
-	Not stranded (U)  
-					- Not Stranded (U)  
-				![](../data/salmon_galaxy.png)  
-				- Please choose `Yes` for gcBias and sequence-specific Bias when you run salmon.  
-				![](../data/gcBias.png)  
+b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
+c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.  
 
-	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
-	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 __Step 3.1:__ Cluster identical sequences together.  
 	a. Cluster all the sequences which are 95% identical within the transcriptome file. Use `cd-hit-est` with `-c 0.95` flag.  
-	b. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
+	b. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.  
+	
 __Step 3.2:__ Identify the coding regions.  
 	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 200 aa length for each ORF. Use `TransDecoder.LongOrfs`  
 	b. Using the predicted peptide sequences (`.pep` file) run BLASTP against _Tribolium castaneum_ protein sequences. Use `makeblastdb` and `blastp` with `-max_target_seqs 1 -outfmt 6 -evalue 1e-5` flags.

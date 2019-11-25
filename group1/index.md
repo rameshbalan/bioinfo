@@ -9,28 +9,27 @@ title: Group 1
 > Find the orthologs among the 5 species of beetles and annotate the orthologs.
 
 ### Project Workflow:
-- __Step 1:__ Construct a _de novo_ transcriptome assembly.  
+__Step 1:__ Construct a _de novo_ transcriptome assembly.  
 	~~a. Run Trinity to construct a primary assembly.~~  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.  
-- __Step 2:__ Filter transcripts with low expression.  
+__Step 2:__ Filter transcripts with low expression.  
 	a. Quantify the expression for each gene. Use `salmon` in galaxy.  
-		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
-		- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
-		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
-			- Here are answers to some of the questions about the input data in salmon.
-				- Is this library mate-paired?  
-					- Paired-end  
-				- Relative orientation of reads within a pair  
-					- Mates are oriented towards each other(I = inward)  
-				- Specify the strandedness of the reads
-		Not stranded (U)  
-					- Not Stranded (U)  
-				![](../data/salmon_galaxy.png)  
-				- Please choose `Yes` for gcBias and sequence-specific Bias when you run salmon.  
-				![](../data/gcBias.png)  
-	b. Retain transcripts with a minimum of _5 TPM_. Write a `python` script.  
-	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
-- __Step 3:__ Identify the coding regions.  
+- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
+	- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
+	- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
+	- Here are answers to some of the questions about the input data in salmon.
+		- Is this library mate-paired? = Paired-end  
+		- Relative orientation of reads within a pair = Mates are oriented towards each other(I = inward)  
+		- Specify the strandedness of the reads
+		Not stranded (U) = Not Stranded (U)  
+		![](../data/salmon_galaxy.png)  
+		- Please choose `Yes` for gcBias and sequence-specific Bias when you run salmon.  
+		![](../data/gcBias.png)  
+
+b. Retain transcripts with a minimum of _5 TPM_. Write `python` script.  
+	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.  
+
+__Step 3:__ Identify the coding regions.  
 	a. Using generated transcriptome from the previous step, run LongOrfs with threshold set to at least 100 aa length for each ORF. Use `TransDecoder.LongOrfs`  
 	b. Using the predicted peptide sequences (`.pep` file) run BLASTP against _Tribolium castaneum_ protein sequences. Use `makeblastdb` and `blastp`.
 	```bash
@@ -47,11 +46,11 @@ title: Group 1
 	TransDecoder.Predict -t target_transcripts.fasta --retain_blastp_hits blastp.outfmt6
 	```
 	d. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
--  __Step 4:__ Find the Orthologs among 5 species.  
+__Step 4:__ Find the Orthologs among 5 species.  
 	a. Run all vs all BLAST among 5 species. Use `makeblastdb` and `blastp`  
 	b. Pick the reciprocal Best BLAST hit (RBBH). Write a `python` script.  
 	c. Run a 5 way script to pull out the orthologs among 5 species. Write a `python` script.
-- __Step 5:__ Add annotation to the orthologs.
+__Step 5:__ Add annotation to the orthologs.
 	a. Using T_cas ids and T_cas reference gff files, add chromosome id (for example: LGX, LG2 etc.),chromosome name (Autosome/ Sex chromosome). Write `python` script.
 	```bash
 	# Get the gff file.
