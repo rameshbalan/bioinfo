@@ -149,7 +149,7 @@ Your project depends on some of the following softwares/programs to carry out a 
 		conda activate salmon
 		```
 	2. What do I do if I get a `salmon: error while loading shared libraries: libboost_iostreams.so.1.60.0:` error?
-		- We could use salmon in galaxy. Here is the instructions.
+		- We could use salmon in galaxy. Here are the instructions.
 		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
 			- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
 			- You may have to add T_cas reference transcriptome to your history. Here is the link.  - [T_cas Transcriptome](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_rna.fna.gz)
