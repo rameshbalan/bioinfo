@@ -13,7 +13,10 @@ title: Group 5
 	~~a. Run Trinity to construct a primary assembly.~~  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 2:__ Filter transcripts with low expression.  
-	a. Quantify the expression for each gene. Use `salmon`  
+	a. Quantify the expression for each gene. Use `salmon` in galaxy.
+		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)
+		- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.
+		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)
 	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
 	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3.1:__ Cluster identical sequences together.  
