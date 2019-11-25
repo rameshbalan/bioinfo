@@ -148,7 +148,15 @@ Your project depends on some of the following softwares/programs to carry out a 
 		# Activate salmon
 		conda activate salmon
 		```
-	2. What do I do if I get a `bad_alloc()` error?  
+	2. What do I do if I get a `salmon: error while loading shared libraries: libboost_iostreams.so.1.60.0:` error?
+		- We could use salmon in galaxy. Here is the instructions.
+		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)  
+			- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
+			- You may have to add T_cas reference transcriptome to your history. Here is the link.  - [T_cas Transcriptome](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_rna.fna.gz)
+		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
+			- Please choose `Yes` for gcBias and seqBias when you run salmon.  
+
+	3. What do I do if I get a `bad_alloc()` error?  
 		- This will happen if you are in group 1 or group 5.
 		- We think this error has to do with the memory allocation on Stampede2 when salmon is called. One of the workaround, is to use `trinity` by calling `salmon` in a script. The instructions are as follows.
 			- Install `trinity`  
