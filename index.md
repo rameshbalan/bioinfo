@@ -154,7 +154,17 @@ Your project depends on some of the following softwares/programs to carry out a 
 			- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.  
 			- You may have to add T_cas reference transcriptome to your history. Here is the link.  - [T_cas Transcriptome](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/335/GCF_000002335.3_Tcas5.2/GCF_000002335.3_Tcas5.2_rna.fna.gz)
 		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)  
-			- Please choose `Yes` for gcBias and seqBias when you run salmon.  
+			- Here are answers to some of the questions about the input data in salmon.
+				- Is this library mate-paired?  
+					- Paired-end  
+				- Relative orientation of reads within a pair  
+					- Mates are oriented towards each other(I = inward)  
+				- Specify the strandedness of the reads
+Not stranded (U)  
+					- Not Stranded (U)
+				![](data/salmon_galaxy.png)
+				- Please choose `Yes` for gcBias and sequence-specific Bias when you run salmon.  
+				![](data/gcBias.png)
 
 	3. What do I do if I get a `bad_alloc()` error?  
 		- This will happen if you are in group 1 or group 5.
