@@ -6,17 +6,17 @@ title: Group 5
 
 ### Project Objective:
 
-> Find the orthologs among the 5 species of beetles and annotate the orthologs.
+> Find the orthologs among the 5 species of beetles and annotate the orthologs.Â
 
 ### Project Workflow:
 - __Step 1:__ Construct a _de novo_ transcriptome assembly.  
 	~~a. Run Trinity to construct a primary assembly.~~  
 	b. Run BUSCO to check the quality of the assembly. Use `BUSCO`.
 - __Step 2:__ Filter transcripts with low expression.  
-	a. Quantify the expression for each gene. Use `salmon` in galaxy.
-		- You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)
-		- This history has all the reads and the four _de novo_ trinity assembly required to run salmon.
-		- Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)
+	a. Quantify the expression for each gene. Use `salmon` in galaxy.  
+		1. You can import the following galaxy history provided here. - [Galaxy History](https://usegalaxy.org/u/rameshb/h/bioinformatics-fall2019)
+		2. This history has all the reads and the four _de novo_ trinity assembly required to run salmon.
+		3. Salmon is available as a tool in Galaxy. - [Salmon in Galaxy](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2)
 	b. Retain only the highest expressed isoforms for each gene. Write a `python` script.  
 	c. Run BUSCO to check the quality of the filtered transcriptome. Use `BUSCO`.
 - __Step 3.1:__ Cluster identical sequences together.  
