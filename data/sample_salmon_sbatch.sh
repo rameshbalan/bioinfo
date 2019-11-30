@@ -26,8 +26,8 @@ source ~/.bashrc
 conda activate salmon
 
 # Loading Dependency modules.
-module load intel/17.0.4
-module load samtools
+# module load intel/17.0.4
+# module load samtools
 
 # Running salmon using trinity.
 ~/trinityrnaseq-v2.8.6/util/align_and_estimate_abundance.pl --transcripts T_frem.fasta --seqType fq --left reads/T_frem_M1_R1.fastq.gz --right reads/T_frem_M1_R2.fastq.gz --est_method salmon --output_dir T_frem_M1 --prep_reference
